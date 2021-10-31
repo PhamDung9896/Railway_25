@@ -75,12 +75,13 @@ WHERE	FullName LIKE 'D%o';
 
 -- Question 12: Xóa tất cả các exam được tạo trước ngày 20/12/2019
 DELETE
-FROM	Exam;
+FROM	Exam
+WHERE	CreateDate<'2019/12/29';
 
 -- Question 13: Xóa tất cả các question có nội dung bắt đầu bằng từ "câu hỏi"
 DELETE
 FROM	Question
-WHERE	Content='câu hỏi';
+WHERE	Content='câu hỏi%';
 
 -- Question 14: Update thông tin của account có id = 5 thành tên "Nguyễn Bá Lộc" và email thành loc.nguyenba@vti.com.vn
 UPDATE `Account`
