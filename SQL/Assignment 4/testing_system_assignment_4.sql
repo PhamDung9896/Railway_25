@@ -110,9 +110,9 @@ SELECT *
 FROM `Group`
 WHERE GroupID NOT IN (SELECT GroupID FROM GroupAccount);
 -- OR --
-SELECT * FROM groupaccount ga
-RIGHT JOIN `group` g ON ga.GroupID = g.GroupID
-WHERE ga.AccountID IS NULL;
+SELECT * FROM GroupAccount GA
+RIGHT JOIN `Group` G ON GA.GroupID = G.GroupID
+WHERE GA.AccountID IS NULL;
 
 
 -- Question 16: Lấy ra question không có answer nào
@@ -148,20 +148,20 @@ WHERE GA.GroupID = 2;
 
 -- Question 18: 
 -- a) Lấy các group có lớn hơn 5 thành viên
-SELECT g.GroupName, COUNT(ga.GroupID) AS SL
-FROM GroupAccount ga
-JOIN `Group` g ON ga.GroupID = g.GroupID
-GROUP BY g.GroupID
-HAVING COUNT(ga.GroupID) >= 5;
+SELECT G.GroupName, COUNT(GA.GroupID) AS So_Luong
+FROM GroupAccount AS GA
+JOIN `Group` AS G ON GA.GroupID = G.GroupID
+GROUP BY G.GroupID
+HAVING COUNT(GA.GroupID) >= 5;
 
 
 
 -- b) Lấy các group có nhỏ hơn 7 thành viên
-SELECT g.GroupName, COUNT(ga.GroupID) AS SL
-FROM GroupAccount ga
-JOIN `Group` g ON ga.GroupID = g.GroupID
-GROUP BY g.GroupID
-HAVING COUNT(ga.GroupID) <= 7;
+SELECT G.GroupName, COUNT(GA.GroupID) AS SL
+FROM GroupAccount GA
+JOIN `Group` G ON GA.GroupID = G.GroupID
+GROUP BY G.GroupID
+HAVING COUNT(GA.GroupID) <= 7;
 
 
 -- c) Ghép 2 kết quả từ câu a) và câu b)
