@@ -11,7 +11,7 @@ USE testing_system_assignment_2;
 -- 					Error Code: 1050. Table 'position' already exists=>????
 -- 					Error Code: 1062. Duplicate entry 'Help_Desk_Specialist' for key 'position.PositionName'
 -- 					Error Code: 3819. Check constraint 'account_chk_1' is violated.
--- 					Error Code: 1364. Field 'GroupID' doesn't have a default value
+-- 					Error Code: 1364. Field 'GroupID' doesn't have a default value->lúc mà mình đặt giá trị not null cho cột nào đó trong 1 bảng thì lúc insert mọi dữ liệu liên quan đến bảng đó mình đều phải thêm cột có giá trị not null vào
 
 
 

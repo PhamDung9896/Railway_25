@@ -2,6 +2,8 @@ DROP DATABASE IF EXISTS testing_system_assignment_2;
 CREATE DATABASE testing_system_assignment_2;
 USE testing_system_assignment_2;
 -- tai sao chay chung thi ok ma chay rieng thi bao loi????--
+-- Giua cac truong voi nhau nen giong nhau--
+-- Neu ko can thi co the bo UNSINGED--
 								
 												-- ***** --
 -- Question 1: Tối ưu lại assignment trước
@@ -72,6 +74,14 @@ CREATE TABLE Question(
             FOREIGN KEY (TypeID) REFERENCES TypeQuestion(TypeID)
 );
 
+
+-- Tao Table 11: ExamQuestion
+CREATE TABLE ExamQuestion(
+			ExamID			TINYINT UNSIGNED NOT NULL DEFAULT 1,
+			QuestionID		TINYINT UNSIGNED NOT NULL,
+            FOREIGN KEY (ExamID) REFERENCES Exam(ExamID),
+            FOREIGN KEY (QuestionID) REFERENCES Question(QuestionID)
+);
 -- Tao Table 9: Answer
 CREATE TABLE Answer(
 			AnswerID		TINYINT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
