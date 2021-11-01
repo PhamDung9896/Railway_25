@@ -170,7 +170,7 @@ FROM GroupAccount GA
 JOIN `Group` AS G ON GA.GroupID = G.GroupID
 GROUP BY G.GroupID
 HAVING COUNT(GA.GroupID) >= 5
-UNION
+UNION ALL
 SELECT G.GroupName, COUNT(GA.GroupID) AS So_Luong
 FROM GroupAccount AS GA
 JOIN `Group` AS G ON GA.GroupID = G.GroupID
